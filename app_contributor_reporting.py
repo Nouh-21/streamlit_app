@@ -6,12 +6,6 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
-st.set_page_config(
-    page_title="Dashboard Contributions Financières",
-    page_icon="💶",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
 # Configuration de la base de données SQLite
 Base = declarative_base()
 engine = create_engine('sqlite:///contributions.db', echo=False)
