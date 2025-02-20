@@ -118,3 +118,4 @@ st.sidebar.markdown("""
 2. Dans Streamlit Secrets :
 ```toml
 # Aucun secret nécessaire pour SQLite local
+""")
