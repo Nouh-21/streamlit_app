@@ -112,10 +112,10 @@ else:
     st.warning("Aucune donnée dans la base de données")
 
 # Optimisation pour Streamlit Cloud
-st.sidebar.markdown("""
-**Configuration requise pour le déploiement :**
-1. Ajouter `contributions.db` au .gitignore
-2. Dans Streamlit Secrets :
-```toml
+#st.sidebar.markdown("""
+#**Configuration requise pour le déploiement :**
+#1. Ajouter `contributions.db` au .gitignore
+#2. Dans Streamlit Secrets :
+#```toml
 # Aucun secret nécessaire pour SQLite local
-""")
+#""")
