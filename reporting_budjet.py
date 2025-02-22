@@ -80,7 +80,7 @@ with st.sidebar.expander("⚙️ Filtres", expanded=True):
 
     # Filtre par montant
     min_amount, max_amount = st.slider(
-        "Fourchette de montants (€)",
+        "Fourchette de montants (MRO)",
         min_value=float(df['montant'].min()),
         max_value=float(df['montant'].max()),
         value=(float(df['montant'].min()), float(df['montant'].max()))
@@ -97,9 +97,9 @@ filtered_df = df[
 # KPI Principaux
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric("Budget Total", f"{filtered_df['montant'].sum():,.2f} €")
+    st.metric("Budget Total", f"{filtered_df['montant'].sum():,.2f} MRO")
 with col2:
-    st.metric("Moyenne Journalière", f"{filtered_df['montant'].mean():,.2f} €/j")
+    st.metric("Moyenne Journalière", f"{filtered_df['montant'].mean():,.2f} MRO/j")
 with col3:
     st.metric("Nombre de Transactions", len(filtered_df))
 
@@ -126,7 +126,7 @@ with tab1:
         x='date_virement',
         y='montant',
         title="Montant des Contributions",
-        labels={'montant': 'Montant (€)', 'date_virement': 'Date'},
+        labels={'montant': 'Montant (MRO)', 'date_virement': 'Date'},
         height=400
     )
     st.plotly_chart(fig, use_container_width=True)
@@ -137,7 +137,7 @@ with tab2:
         x='montant',
         nbins=20,
         title="Distribution des Montants",
-        labels={'montant': 'Montant (€)'},
+        labels={'montant': 'Montant (MRO)'},
         height=400
     )
     st.plotly_chart(fig, use_container_width=True)
@@ -152,7 +152,7 @@ st.dataframe(
     }),
     column_config={
         "📱 Téléphone": st.column_config.TextColumn(width="medium"),
-        "💶 Montant": st.column_config.NumberColumn(format="€ %.2f"),
+        "💶 Montant": st.column_config.NumberColumn(format="MRO %.2f"),
         "📅 Date": st.column_config.DateColumn(format="DD/MM/YYYY")
     },
     use_container_width=True,
